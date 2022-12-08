@@ -16,7 +16,7 @@ def test_practice_form():
     browser.element('.react-datepicker__day--003').click()
     browser.element('#subjectsInput').type('Physics').press_enter()
     browser.element('#hobbiesWrapper').all('.custom-checkbox').element_by(have.exact_text('Sports')).click()
-    browser.element('#uploadPicture').send_keys(abspath('/home/george/MyProject/QAGuru_5lesson_selene/resources/test_image.png'))
+    browser.element('#uploadPicture').send_keys(abspath('../resources/test_image.png'))
     browser.element('#currentAddress').type('Ukraine')
     browser.element('#state').element('input').type('Haryana').press_enter()
     browser.element('#city').element('input').type('Karnal').press_enter()
