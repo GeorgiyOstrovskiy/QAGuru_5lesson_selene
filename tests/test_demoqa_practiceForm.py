@@ -4,8 +4,9 @@ from selene import have, command
 
 
 chdir('../resources')
-dir = getcwd()
-res_dir = path.join(dir, 'test_image.png')
+cur_dir = getcwd()
+res_dir = path.join(cur_dir, 'test_image.png')
+
 
 def test_practice_form():
     browser.open('/automation-practice-form')
