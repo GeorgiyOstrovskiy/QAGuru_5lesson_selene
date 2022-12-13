@@ -1,7 +1,11 @@
-from os.path import abspath
+from os import path, chdir, getcwd
 from selene.support.shared import browser
 from selene import have, command
 
+
+chdir('../resources')
+dir = getcwd()
+res_dir = path.join(dir, 'test_image.png')
 
 def test_practice_form():
     browser.open('/automation-practice-form')
@@ -16,7 +20,7 @@ def test_practice_form():
     browser.element('.react-datepicker__day--003').click()
     browser.element('#subjectsInput').type('Physics').press_enter()
     browser.element('#hobbiesWrapper').all('.custom-checkbox').element_by(have.exact_text('Sports')).click()
-    browser.element('#uploadPicture').send_keys(abspath('/home/george/MyProject/QAGuru_5lesson_selene/resources/test_image.png'))
+    browser.element('#uploadPicture').send_keys(res_dir)
     browser.element('#currentAddress').type('Ukraine')
     browser.element('#state').element('input').type('Haryana').press_enter()
     browser.element('#city').element('input').type('Karnal').press_enter()
