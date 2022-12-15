@@ -1,11 +1,10 @@
+import os.path
 from os import path, chdir, getcwd
 from selene.support.shared import browser
 from selene import have, command
 
 
-chdir('../resources')
-cur_dir = getcwd()
-res_dir = path.join(cur_dir, 'test_image.png')
+res_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, 'resources/test_image.png'))
 
 
 def test_practice_form():
